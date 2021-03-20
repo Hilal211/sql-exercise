@@ -34,3 +34,17 @@ select companies.Name from companies inner join employees
 on employees.Company = companies.Name
 where employees.Role="Graphic Designer";
 
+SELECT Name FROM students
+WHERE Points = (SELECT max(Points) 
+                FROM students);
+	
+select avg(points) from students;
+
+select count(ID) as "students that have 500 points" from students
+where Points=500;
+
+select Name from students
+where Name like"%s%";
+
+select * from students
+order by Points DESC;
