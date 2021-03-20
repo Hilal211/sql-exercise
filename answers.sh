@@ -21,5 +21,16 @@ where ID=1
 DELETE from students
 where ID=6;
 
+SELECT employees.Name, employees.Company, companies.Date
+FROM employees INNER JOIN companies
+ON employees.Company = companies.Name;
 
+select employees.Name from employees
+INNER join companies 
+on employees.Company = companies.Name
+where companies.Date<2000;
+
+select companies.Name from companies inner join employees
+on employees.Company = companies.Name
+where employees.Role="Graphic Designer";
 

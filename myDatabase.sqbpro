@@ -1,1 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Lenovo/Desktop/sql-exercise/myDatabase.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1484"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:mainsqlite_sequence"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1"></sql><current_tab id="0"/></tab_sql></sqlb_project>
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Lenovo/Desktop/sql-exercise/carDealership.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1283"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainemployees"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="companies" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="83"/><column index="3" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="employee_company " show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="153"/><column index="3" value="146"/><column index="4" value="137"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="employees" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="59"/><column index="3" value="143"/><column index="4" value="90"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="86"/><column index="2" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="answers.sh">select Name from students;
+select * from students
+where Age&gt;30;
+select Name from students
+where Gender like'F'
+And age like'30';
+insert into students VALUES(8,&quot;Hilal&quot;,&quot;20&quot;,'M',500);
+update students
+set Points=400
+where Name=&quot;Basma&quot;;
+update students
+set Points=150
+where Name=&quot;Alex&quot;;
+
+insert INTO graduates(Name,Age,Gender,Points)
+select Name,Age,Gender,Points from students
+where ID=6; 
+update graduates
+set Graduation=&quot;08/09/2018&quot;
+where ID=1
+DELETE from students
+where ID=6;
+
+SELECT employees.Name, employees.Company, companies.Date
+FROM employees INNER JOIN companies
+ON employees.Company = companies.Name;
+
+select employees.Name from employees
+INNER join companies 
+on employees.Company = companies.Name
+where companies.Date&lt;2000;
+
+select companies.Name from companies inner join employees
+on employees.Company = companies.Name
+where employees.Role=&quot;Graphic Designer&quot;;
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
