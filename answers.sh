@@ -12,4 +12,14 @@ update students
 set Points=150
 where Name="Alex";
 
+insert INTO graduates(Name,Age,Gender,Points)
+select Name,Age,Gender,Points from students
+where ID=6; 
+update graduates
+set Graduation="08/09/2018"
+where ID=1
+DELETE from students
+where ID=6;
+
+
 
